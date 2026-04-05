@@ -6,6 +6,7 @@ import Blueprint from '@/components/Blueprint';
 import Curriculum from '@/components/Curriculum';
 import Testimonials from '@/components/Testimonials';
 import Pricing from '@/components/Pricing';
+import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
@@ -17,7 +18,8 @@ export default function Home() {
       <Blueprint />
       <Curriculum />
       <Testimonials />
-     <Pricing/>
+      <Pricing />
+      <Footer />
     </main>
   );
 }
