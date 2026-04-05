@@ -146,7 +146,9 @@ const Curriculum = () => {
             <div className=" ">
               {benefits.map((benefit, i) => (
                 <div key={i} className="flex items-center  group">
-                  <Image src={signIcon} alt="Check" width={200} height={200} className="opacity-80 w-22 group-hover:opacity-100" />
+                  <div className="relative w-12 h-12">
+                    <Image src={signIcon} alt="Check" fill sizes="48px" className="object-contain opacity-80 group-hover:opacity-100" />
+                  </div>
                   <p className="text-neutral-400 text-sm">
                     {benefit}
                   </p>

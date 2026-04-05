@@ -24,7 +24,7 @@ const Pricing = () => {
                     <div className=" ">
                         {benefits.slice(0, 2).map((benefit, i) => (
                             <div key={i} className="flex items-center  group">
-                                <Image src={signIcon} alt="Check" width={200} height={200} className="opacity-80 w-22 group-hover:opacity-100" />
+                                <Image src={signIcon} alt="Check" width={200} height={200} className="opacity-80 w-22 group-hover:opacity-100" style={{ height: 'auto' }} />
                                 <p className="text-neutral-400 text-sm">
                                     {benefit}
                                 </p>
@@ -49,7 +49,7 @@ const Pricing = () => {
                     <div className=" ">
                         {benefits.map((benefit, i) => (
                             <div key={i} className="flex items-center  group">
-                                <Image src={signIcon} alt="Check" width={200} height={200} className="opacity-80 w-22 group-hover:opacity-100" />
+                                <Image src={signIcon} alt="Check" width={200} height={200} className="opacity-80 w-22 group-hover:opacity-100" style={{ height: 'auto' }} />
                                 <p className="text-neutral-400 text-sm">
                                     {benefit}
                                 </p>

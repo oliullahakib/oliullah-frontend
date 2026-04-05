@@ -15,6 +15,7 @@ const NoWorries = () => {
               src={'https://res.cloudinary.com/dohsenfjm/image/upload/v1775412745/pexels-mizunokozuki-12903252_oipde0.png'}
               alt="Person concentrating"
               fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"
             />
           </div>
@@ -71,7 +72,7 @@ const NoWorries = () => {
                     key={i} 
                     className="relative flex-1 md:flex-none w-full md:w-28 lg:w-36 aspect-square md:aspect-4/5 rounded-xl md:rounded-2xl overflow-hidden border border-neutral-800/50 transition-all duration-500 hover:scale-105"
                   >
-                    <Image src={img} alt="Focus visual" fill className="object-cover" />
+                    <Image src={img} alt="Focus visual" fill sizes="(max-width: 768px) 33vw, 150px" className="object-cover" />
                   </div>
                 ))}
               </div>

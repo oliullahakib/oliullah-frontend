@@ -16,6 +16,7 @@ const Navbar = () => {
             width={32}
             height={32}
             className="w-auto h-8"
+            style={{ width: 'auto' }}
           />
         </a>
 
@@ -41,6 +42,7 @@ const Navbar = () => {
               width={400}
               height={240}
               className="w-20 h-auto"
+              style={{ height: 'auto' }}
             />
           </button>
           <EnrollButton className="px-5 py-2 text-sm md:text-base" />
