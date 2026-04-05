@@ -9,7 +9,7 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-neutral-950/80 backdrop-blur-md">
       <div className="max-w-[1400px] mx-auto px-6 h-20 flex items-center justify-between border-b border-neutral-800/50">
         {/* Logo */}
-        <div className="flex items-center gap-2">
+        <a href="#home" className="flex items-center gap-2">
           <Image
             src={logo}
             alt="PPA Logo"
@@ -17,7 +17,7 @@ const Navbar = () => {
             height={32}
             className="w-auto h-8"
           />
-        </div>
+        </a>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
@@ -25,7 +25,7 @@ const Navbar = () => {
             <a
               key={item}
               href={`#${item.toLowerCase()}`}
-              className="text-neutral-400 hover:text-neutral-0 transition-colors text-sm font-medium"
+              className="text-neutral-200 hover:text-neutral-0 transition-colors text-sm font-medium"
             >
               {item}
             </a>
@@ -34,13 +34,13 @@ const Navbar = () => {
 
         {/* Right Actions */}
         <div className="flex items-center gap-4">
-          <button className="p-2 hover:bg-neutral-800 rounded-full transition-colors hidden sm:block">
+          <button className=" hover:bg-neutral-800 rounded-full transition-colors hidden sm:block">
             <Image
               src={toggleIcon}
               alt="Toggle"
-              width={40}
-              height={24}
-              className="w-10 h-auto"
+              width={400}
+              height={240}
+              className="w-20 h-auto"
             />
           </button>
           <EnrollButton className="px-5 py-2 text-sm md:text-base" />

@@ -29,7 +29,7 @@ const Blueprint = () => {
   ];
 
   return (
-    <section className="relative py-24 lg:py-32 bg-neutral-950 overflow-hidden">
+    <section id='overview' className="relative py-24 lg:py-32 bg-neutral-950 overflow-hidden">
       <div className="max-w-1400px mx-auto px-6 flex flex-col items-center">
 
         {/* Top Badge */}

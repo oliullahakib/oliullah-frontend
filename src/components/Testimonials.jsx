@@ -9,7 +9,7 @@ const TestimonialCard = ({ testimonial }) => {
   const isVideo = testimonial.type === 'video';
 
   return (
-    <div className="relative shrink-0 w-full sm:w-1/2 lg:w-1/3 px-3 transition-all duration-700">
+    <div id='testimonials' className="relative shrink-0 w-full sm:w-1/2 lg:w-1/3 px-3 transition-all duration-700">
       <div className={`relative h-full min-h-[400px] rounded-3xl overflow-hidden border border-neutral-800/50 group ${!isVideo ? 'bg-neutral-900/40 p-8 flex flex-col justify-between' : ''}`}>
         
         {/* Background Image for Video Testimonials */}

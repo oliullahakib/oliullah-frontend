@@ -6,6 +6,7 @@ import EnrollButton from './Shared/EnrollButton';
 import playButtonIcon from '../assets/icons/Play-Button.png';
 import texture from '../assets/texture.png';
 import TitleBadge from './Shared/TitleBadge';
+import Link from 'next/link';
 
 const Banner = () => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -15,7 +16,7 @@ const Banner = () => {
   };
 
   return (
-    <section className="relative min-h-screen pt-32 pb-20 overflow-hidden bg-neutral-950">
+    <section id='home' className="relative min-h-screen pt-32 pb-20 overflow-hidden bg-neutral-950">
       {/* Background Texture Overlay (Global) */}
       <div
         className="absolute inset-0 z-0 opacity-10 pointer-events-none"
@@ -26,20 +27,21 @@ const Banner = () => {
         }}
       ></div>
 
-      {/* Bottom Textured Blue Background Layer */}
-      <div className="absolute bottom-0 left-0 right-0 h-[45%] z-0 bg-linear-to-b from-primary-500 to-primary-600">
+      {/* Bottom Textured Blue Background Layer - Rounded Stage */}
+      <div className="absolute top-[48%] md:top-[42%] bottom-0 left-0 right-0 z-0 bg-primary-600  overflow-hidden">
+        {/* Horizontal Line Texture (Increased visibility) */}
         <div
-          className="absolute inset-0 opacity-50"
+          className="absolute inset-0"
           style={{
             backgroundImage: `url(${texture.src})`,
             backgroundSize: '100% 6px',
             backgroundRepeat: 'repeat'
           }}
         ></div>
-        {/* Glow at the top edge of the blue area */}
-        <div className="absolute top-0 left-0 right-0 h-px bg-primary-500/50 shadow-[0_0_20px_rgba(59,130,246,0.8)]"></div>
-        {/* Subtle gradient to blend */}
-        <div className="absolute inset-0 bg-linear-to-b from-neutral-950 to-transparent h-20"></div>
+        
+        {/* Glow & Gradient Overlays - Smoothed transition */}
+        <div className="absolute inset-x-0 top-0 h-64 bg-linear-to-b from-neutral-950 via-neutral-950/40 to-transparent z-10"></div>
+        <div className="absolute inset-0 bg-linear-to-b from-primary-600/40 via-primary-700/70 to-primary-900/90 mix-blend-multiply"></div>
       </div>
 
       {/* Central Gradient Glow */}
@@ -67,9 +69,9 @@ const Banner = () => {
         {/* Actions */}
         <div className="flex flex-col sm:flex-row gap-4 mb-20 items-center">
           <EnrollButton className="w-full sm:w-auto px-8 py-4" />
-          <button className="w-full sm:w-auto px-8 py-4 bg-neutral-900/50 backdrop-blur-sm border border-neutral-800 text-white font-medium rounded-lg hover:bg-neutral-800 transition-all">
+          <Link href="#curriculum" className="w-full sm:w-auto px-8 py-4 bg-neutral-600/50 backdrop-blur-sm border border-neutral-800 text-white font-medium rounded-lg hover:bg-neutral-800 transition-all">
             Curriculum
-          </button>
+          </Link>
         </div>
 
         {/* Video Preview */}

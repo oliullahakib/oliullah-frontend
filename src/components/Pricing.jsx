@@ -10,12 +10,12 @@ const Pricing = () => {
         "Exclusive Community – Connect with others."
     ];
     return (
-        <div className='flex flex-col md:flex-row gap-6 justify-center max-w-7xl mx-auto mb-50 px-5 mt-32'>
+        <div id='pricing' className='flex flex-col md:flex-row gap-6 justify-center max-w-7xl mx-auto mb-50 px-5 mt-32'>
             {/* left div  */}
-            <div className=''>
+            <div  className=''>
                 <div className="w-full min-h-[530px] lg:w-[750px] bg-neutral-600/40 border border-primary-300/50 rounded-[32px] flex flex-col justify-center px-10">
                     <div>
-                        <TitleBadge className={'w-40 top-5'}>Introduction</TitleBadge>
+                        <TitleBadge className={'w-40 top-5 text-white'}>Introduction</TitleBadge>
                         <h1 className="text-white text-2xl md:text-3xl lg:text-4xl font-bold m-5 leading-tight">
                             The Deep Work  Blueprint
                         </h1>
