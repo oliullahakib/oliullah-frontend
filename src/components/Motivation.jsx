@@ -1,13 +1,9 @@
 import React from 'react';
 import Image from 'next/image';
-
-// Import images from assets
-import img1 from '../assets/images/pexels-yankrukov-7793987.png';
-import img2 from '../assets/images/pexels-a-darmel-7710219.png';
-import img3 from '../assets/images/pexels-tima-miroshnichenko-4841692.png';
 import TitleBadge from './Shared/TitleBadge';
 
 const Motivation = () => {
+    const images = ['https://res.cloudinary.com/dohsenfjm/image/upload/v1775412743/pexels-tima-miroshnichenko-4841703_iuxt3z.png','https://res.cloudinary.com/dohsenfjm/image/upload/v1775411904/pexels-a-darmel-7710219_lbrzz4.png','https://res.cloudinary.com/dohsenfjm/image/upload/v1775412753/pexels-anthonyshkraba-production-8278849_ltseun.png']
   return (
     <section className="relative py-32 overflow-hidden bg-neutral-950">
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 flex flex-col items-center text-center">
@@ -27,7 +23,7 @@ const Motivation = () => {
 
         {/* Image Grid */}
         <div className="flex justify-center gap-2 w-full max-w-[900px]">
-          {[img1, img2, img3].map((img, index) => (
+          {images.map((img, index) => (
             <div
               key={index}
               className="relative w-28 aspect-4/5 rounded-2xl overflow-hidden group border border-neutral-800/50"
@@ -37,7 +33,6 @@ const Motivation = () => {
                 alt={`Pain point visual ${index + 1}`}
                 fill
                 className="object-cover  transition-transform duration-700 group-hover:scale-110"
-                placeholder="blur"
               />
               <div className="absolute inset-0 bg-neutral-950/10 group-hover:bg-transparent transition-colors duration-500"></div>
             </div>
