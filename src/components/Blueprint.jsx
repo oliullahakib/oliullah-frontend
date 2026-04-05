@@ -33,7 +33,9 @@ const Blueprint = () => {
       <div className="max-w-1400px mx-auto px-6 flex flex-col items-center">
 
         {/* Top Badge */}
-        <TitleBadge title="The Deep Work Blueprint" className="mb-8" />
+        <TitleBadge className="mb-8" >
+          <span className="text-white">The Deep Work Blueprint</span>
+        </TitleBadge>
 
         {/* Heading */}
         <h2 className="max-w-[800px] text-center text-3xl md:text-5xl lg:text-6xl font-medium text-white mb-24 leading-[1.1]">

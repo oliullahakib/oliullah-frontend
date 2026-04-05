@@ -9,7 +9,9 @@ const Motivation = () => {
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 flex flex-col items-center text-center">
 
         {/* Badge: "Are Distractions Holding You Back?" */}
-        <TitleBadge title="Are Distractions Holding You Back?" className='w-60' />
+        <TitleBadge className='w-60' >
+          <span className="text-white">Are Distractions Holding You Back?</span>
+        </TitleBadge>
 
         {/* Heading: Dual-tone / Faded effect */}
         <h2 className="max-w-[1000px] text-3xl md:text-5xl lg:text-6xl font-medium tracking-tight mb-20 leading-[1.2]">
@@ -32,6 +34,7 @@ const Motivation = () => {
                 src={img}
                 alt={`Pain point visual ${index + 1}`}
                 fill
+                sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
                 className="object-cover  transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-neutral-950/10 group-hover:bg-transparent transition-colors duration-500"></div>

@@ -26,14 +26,21 @@ const NoWorries = () => {
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12 lg:mb-20">
               
               {/* Badge */}
-              <TitleBadge title="No worries" className='w-40' />
+              <TitleBadge className='w-40' >
+                <span className="text-white">No worries</span>
+              </TitleBadge>
 
               {/* Social Proof (Avatar Stack) */}
               <div className="flex items-center gap-3">
                 <div className="flex -space-x-3">
                   {images.map((avatar, i) => (
                     <div key={i} className="relative w-8 h-8 rounded-full border-2 border-neutral-900 overflow-hidden shadow-lg">
-                      <Image src={avatar} alt="Student" fill className="object-cover" />
+                      <Image 
+                      src={avatar} 
+                      alt="Student" 
+                      fill 
+                      sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+                      className="object-cover" />
                     </div>
                   ))}
                 </div>

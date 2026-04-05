@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import EnrollButton from './EnrollButton';
+import EnrollButton from './Shared/EnrollButton';
 import logo from '../assets/icons/logo.png';
 import toggleIcon from '../assets/icons/Toggle.png';
 
@@ -16,7 +16,7 @@ const Navbar = () => {
             width={32}
             height={32}
             className="w-auto h-8"
-          />   
+          />
         </div>
 
         {/* Desktop Navigation */}
