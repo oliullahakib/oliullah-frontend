@@ -1,28 +1,88 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
+/* Fonts */
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('/fonts/SFPRODISPLAYREGULAR.OTF') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('/fonts/SFPRODISPLAYMEDIUM.OTF') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('/fonts/SFPRODISPLAYBOLD.OTF') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@theme {
+  --font-sans: 'SF Pro Display', var(--font-geist-sans);
+  
+  /* Primary Colors */
+  --color-primary-50: #EDF5FF;
+  --color-primary-100: hsl(220 100% 89.5%);
+  --color-primary-200: hsl(220 100% 83%);
+  --color-primary-300: hsl(220 100% 74.5%);
+  --color-primary-400: hsl(220 100% 67%);
+  --color-primary-500: hsl(220 100% 56%);
+  --color-primary-600: hsl(220 81.3% 47.1%);
+  --color-primary-700: hsl(220 78.6% 39.2%);
+  --color-primary-800: hsl(220 80.3% 27.7%);
+  --color-primary-900: hsl(220 81.8% 16.5%);
+  --color-primary-950: hsl(220 76.5% 8.5%);
+
+  /* Neutral Colors */
+  --color-neutral-0: #ffffff;
+  --color-neutral-50: hsl(206 33% 95%);
+  --color-neutral-100: hsl(207 18% 88.5%);
+  --color-neutral-200: hsl(208 15% 83.3%);
+  --color-neutral-300: hsl(209 8% 68%);
+  --color-neutral-400: hsl(211 10% 52.5%);
+  --color-neutral-500: hsl(214 15% 34.6%);
+  --color-neutral-600: hsl(216 20% 20.8%);
+  --color-neutral-700: hsl(216 30% 11%);
+  --color-neutral-800: hsl(218 30% 7.5%);
+  --color-neutral-900: hsl(219 30% 4%);
+  --color-neutral-950: #000000;
+
+  /* Other Colors */
+  --color-red-500: hsl(0 100% 56%);
+
+  /* Alpha Colors */
+  --color-alpha-white-30: rgba(255, 255, 255, 0.3);
+  --color-alpha-blue-15: hsla(220, 100%, 56%, 0.15);
+  --color-alpha-black-20: rgba(0, 0, 0, 0.2);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  h1 { @apply text-[52px] font-medium leading-[1.15]; }
+  h2 { @apply text-[40px] font-medium leading-[1.15]; }
+  h3 { @apply text-[28px] font-medium leading-[1.15]; }
+  h4 { @apply text-[24px] font-normal leading-[1.35]; }
+  h5 { @apply text-[20px] font-normal leading-[1.35]; }
+}
+
+@layer utilities {
+  .glow-line-horizontal {
+    background: linear-gradient(90deg, transparent 0%, var(--color-primary-500) 50%, transparent 100%);
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  .glow-line-vertical {
+    background: linear-gradient(180deg, transparent 0%, var(--color-primary-500) 50%, transparent 100%);
+  }
+  .glow-reflect-sm {
+    background: radial-gradient(circle at center, var(--color-primary-500) 0%, transparent 70%);
+  }
 }
