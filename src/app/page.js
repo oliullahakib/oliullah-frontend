@@ -4,6 +4,7 @@ import Motivation from '@/components/Motivation';
 import NoWorries from '@/components/NoWorries';
 import Blueprint from '@/components/Blueprint';
 import Curriculum from '@/components/Curriculum';
+import Testimonials from '@/components/Testimonials';
 
 export default function Home() {
   return (
@@ -14,7 +15,8 @@ export default function Home() {
       <NoWorries />
       <Blueprint />
       <Curriculum />
-      <section id="testimonials" className="h-20"></section>
+      <Testimonials />
+      {/* Additional sections can be added here */}
       <section id="pricing" className="h-20"></section>
     </main>
   );
