@@ -16,10 +16,11 @@ const Motivation = () => {
         {/* Heading: Dual-tone / Faded effect */}
         <h2 className="max-w-[1000px] text-3xl md:text-5xl lg:text-6xl font-medium tracking-tight mb-20 leading-[1.2]">
           <span className="text-white">
-            If you struggle to focus, feel overwhelmed by end
+            If you struggle to focus, feel overwhelmed by end 
           </span>
+          <span> l</span>
           <span className="text-neutral-600">
-            less tasks, or procrastinate instead of making progress, you're not alone.
+            ess tasks, or procrastinate instead of making progress, you're not alone.
           </span>
         </h2>
 
