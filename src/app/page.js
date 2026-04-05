@@ -2,6 +2,7 @@ import Navbar from '@/components/Navbar';
 import Banner from '@/components/Banner';
 import Motivation from '@/components/Motivation';
 import NoWorries from '@/components/NoWorries';
+import Blueprint from '@/components/Blueprint';
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <Banner />
       <Motivation />
       <NoWorries />
+      <Blueprint />
       
       {/* Additional sections can be added here */}
       <section id="curriculum" className="h-20"></section>
