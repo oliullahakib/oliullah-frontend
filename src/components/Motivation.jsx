@@ -56,7 +56,7 @@ const Motivation = () => {
           <span className="text-white">
             If you struggle to focus, feel overwhelmed by end 
           </span>
-          <span> l</span>
+          <span>l</span>
           <span className="text-neutral-600">
             ess tasks, or procrastinate instead of making progress, you're not alone.
           </span>

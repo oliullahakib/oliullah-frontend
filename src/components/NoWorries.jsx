@@ -63,11 +63,11 @@ const NoWorries = () => {
           >
             
             {/* Header Area */}
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12 lg:mb-20">
+            <div className="flex flex-col items-start sm:flex-row sm:items-center justify-between gap-6 mb-20 lg:mb-28">
               
               {/* Badge */}
               <motion.div variants={fadeInUp} initial="initial" whileInView="whileInView" viewport={{ once: false }}>
-                <TitleBadge className='w-40' >
+                <TitleBadge className='w-32' >
                   <span className="text-white">No worries</span>
                 </TitleBadge>
               </motion.div>
@@ -78,7 +78,7 @@ const NoWorries = () => {
                 whileInView="whileInView"
                 viewport={{ once: false }}
                 variants={staggerContainer}
-                className="flex items-center gap-3"
+                className="flex flex-col items-start sm:items-end gap-3"
               >
                 <div className="flex -space-x-3">
                   {images.map((avatar, i) => (
@@ -96,7 +96,7 @@ const NoWorries = () => {
                     </motion.div>
                   ))}
                 </div>
-                <motion.p variants={fadeInUp} className="text-neutral-400 text-xs md:text-sm font-medium">
+                <motion.p variants={fadeInUp} className="text-neutral-100 text-xs md:text-sm font-medium">
                   Join with 5K other students
                 </motion.p>
               </motion.div>
