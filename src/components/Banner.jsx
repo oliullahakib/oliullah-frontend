@@ -8,6 +8,8 @@ import texture from '../assets/texture.png';
 import TitleBadge from './Shared/TitleBadge';
 import Link from 'next/link';
 
+import { motion } from 'framer-motion';
+
 const Banner = () => {
   const [isPlaying, setIsPlaying] = useState(false);
 
@@ -15,20 +17,45 @@ const Banner = () => {
     setIsPlaying(true);
   };
 
+  const fadeInUp = {
+    initial: { opacity: 0, y: 30 },
+    whileInView: { opacity: 1, y: 0 },
+    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
+  };
+
+  const staggerContainer = {
+    initial: {},
+    whileInView: {
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
   return (
     <section id='home' className="relative min-h-screen pt-32 pb-20 overflow-hidden bg-neutral-950">
       {/* Background Texture Overlay (Global) */}
-      <div
-        className="absolute inset-0 z-0 opacity-10 pointer-events-none"
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 0.1 }}
+        viewport={{ once: false }}
+        transition={{ duration: 1.5 }}
+        className="absolute inset-0 z-0 pointer-events-none"
         style={{
           backgroundImage: `url(${texture.src})`,
           backgroundSize: '100% 4px',
           backgroundRepeat: 'repeat'
         }}
-      ></div>
+      ></motion.div>
 
       {/* Bottom Textured Blue Background Layer - Rounded Stage */}
-      <div className="absolute top-[48%] md:top-[42%] bottom-0 left-0 right-0 z-0 bg-primary-600  overflow-hidden">
+      <motion.div 
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false }}
+        transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+        className="absolute top-[48%] md:top-[42%] bottom-0 left-0 right-0 z-0 bg-primary-600  overflow-hidden"
+      >
         {/* Horizontal Line Texture (Increased visibility) */}
         <div
           className="absolute inset-0"
@@ -42,40 +69,71 @@ const Banner = () => {
         {/* Glow & Gradient Overlays - Smoothed transition */}
         <div className="absolute inset-x-0 top-0 h-64 bg-linear-to-b from-neutral-950 via-neutral-950/40 to-transparent z-10"></div>
         <div className="absolute inset-0 bg-linear-to-b from-primary-600/40 via-primary-700/70 to-primary-900/90 mix-blend-multiply"></div>
-      </div>
+      </motion.div>
 
       {/* Central Gradient Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-[1200px] max-h-[800px] bg-primary-600/10 blur-[150px] rounded-full z-0 opacity-50"></div>
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 0.5, scale: 1 }}
+        viewport={{ once: false }}
+        transition={{ duration: 2 }}
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-[1200px] max-h-[800px] bg-primary-600/10 blur-[150px] rounded-full z-0 opacity-50"
+      ></motion.div>
 
-      <div className="relative z-10 max-w-[1400px] mx-auto px-6 flex flex-col items-center text-center">
+      <motion.div 
+        variants={staggerContainer}
+        initial="initial"
+        whileInView="whileInView"
+        viewport={{ once: false, margin: "-100px" }}
+        className="relative z-10 max-w-[1400px] mx-auto px-6 flex flex-col items-center text-center"
+      >
         {/* Countdown Badge */}
-        <TitleBadge className="mb-8" >
-          <span className="text-white">30% off until </span>
-          <span className="text-white">4d : 2h : 41m : 17s</span>
-        </TitleBadge>
+        <motion.div variants={fadeInUp}>
+          <TitleBadge className="mb-8" >
+            <span className="text-white">30% off until </span>
+            <span className="text-white">4d : 2h : 41m : 17s</span>
+          </TitleBadge>
+        </motion.div>
 
 
         {/* Hero Content */}
-        <h1 className="max-w-[800px] text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.1]">
+        <motion.h1 
+          variants={fadeInUp}
+          viewport={{ once: false }}
+          className="max-w-[800px] text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.1]"
+        >
           Master Focus & Get <br />
           <span className="text-white/90">More Done in Less Time</span>
-        </h1>
+        </motion.h1>
 
-        <p className="max-w-[600px] text-neutral-400 text-lg md:text-xl mb-12 leading-relaxed">
+        <motion.p 
+          variants={fadeInUp}
+          viewport={{once:false}}
+          className="max-w-[600px] text-neutral-400 text-lg md:text-xl mb-12 leading-relaxed"
+        >
           A step-by-step system to eliminate procrastination, train your
           brain for deep work, and boost productivity effortlessly.
-        </p>
+        </motion.p>
 
         {/* Actions */}
-        <div className="flex flex-col sm:flex-row gap-4 mb-20 items-center">
+        <motion.div 
+          variants={fadeInUp}
+          className="flex flex-col sm:flex-row gap-4 mb-20 items-center"
+        >
           <EnrollButton className="w-full sm:w-auto px-8 py-4" />
           <Link href="#curriculum" className="w-full sm:w-auto px-8 py-4 bg-neutral-600/50 backdrop-blur-sm border border-neutral-800 text-white font-medium rounded-lg hover:bg-neutral-800 transition-all">
             Curriculum
           </Link>
-        </div>
+        </motion.div>
 
         {/* Video Preview */}
-        <div className="relative w-full max-w-[1000px] aspect-video rounded-3xl overflow-hidden border border-neutral-800/50 shadow-2xl group">
+        <motion.div 
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 1, delay: 0.4 }}
+          className="relative w-full max-w-[1000px] aspect-video rounded-3xl overflow-hidden border border-neutral-800/50 shadow-2xl group"
+        >
           {!isPlaying ? (
             <div className="absolute inset-0 bg-neutral-900/40 flex items-center justify-center cursor-pointer" onClick={handlePlayClick}>
               {/* Play Button Overlay */}
@@ -109,8 +167,8 @@ const Banner = () => {
               allowFullScreen
             ></iframe>
           )}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };
