@@ -55,7 +55,7 @@ const Blueprint = () => {
     hidden: { scaleY: 0 },
     visible: {
       scaleY: 1,
-      transition: { duration: 1, ease: "easeInOut" }
+      transition: { duration: 0.75, ease: "easeInOut" }
     }
   };
 
@@ -96,12 +96,12 @@ const Blueprint = () => {
         {/* Timeline Content - Side by Side Layout */}
         <div className="relative w-full max-w-[500px] mx-auto">
 
-          <div className="flex flex-col">
+          <div className="flex flex-col justify-center items-center">
             {steps.map((step, index) => (
               <div key={index} className="relative flex items-start gap-12 lg:gap-20 group">
                 
                 {/* Vertical Line Connector (Spans the height of the step) */}
-                {index !== steps.length - 1 && (
+                {index !== steps.length + 1  && (
                   <motion.div 
                     variants={lineVariants}
                     style={{ originY: 0 }}
