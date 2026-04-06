@@ -178,7 +178,7 @@ const Curriculum = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: false }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="w-full lg:w-[450px] bg-neutral-600/40 border border-primary-300/50 rounded-[32px]  sticky top-24"
+            className="w-full md:w-[450px] mx-auto bg-neutral-600/40 border border-primary-300/50 rounded-[32px]  sticky top-24"
           >
             <h3 className="text-white text-2xl md:text-3xl lg:text-4xl font-bold m-5 leading-tight">
               Not only video lessons!
@@ -197,11 +197,11 @@ const Curriculum = () => {
               ))}
             </div>
 
-            <div className="flex justify-center mb-5">
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <EnrollButton className="w-2/3 py-2 text-lg" />
+           
+              <motion.div className='mx-auto w-2/3 my-10' whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <EnrollButton className="py-2 w-full text-lg" />
               </motion.div>
-            </div>
+            
           </motion.div>
 
         </div>
