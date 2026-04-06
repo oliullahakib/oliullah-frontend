@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import TitleBadge from './Shared/TitleBadge';
 import EnrollButton from './Shared/EnrollButton';
+import { motion } from 'framer-motion';
 
 // Import icons
 import playButtonIcon from '../assets/icons/Play-Button.png';
@@ -59,28 +60,62 @@ const Curriculum = () => {
     "Exclusive Community – Connect with others."
   ];
 
+  const fadeInUp = {
+    initial: { opacity: 0, y: 30 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: false, margin: "-100px" },
+    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
+  };
+
+  const staggerContainer = {
+    initial: {},
+    whileInView: {
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
   return (
     <section id='curriculum' className="relative py-24 lg:py-32 bg-neutral-950 overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6">
 
         {/* Header Area */}
-        <div className="flex flex-col items-center text-center mb-20 lg:mb-24">
-          <TitleBadge className="mb-8">
-            <span className="text-white">Course Curriculum</span>
-          </TitleBadge>
-          <h2 className="max-w-[900px] text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] tracking-tight">
+        <motion.div 
+          initial="initial"
+          whileInView="whileInView"
+          viewport={{ once: false }}
+          variants={staggerContainer}
+          className="flex flex-col items-center text-center mb-20 lg:mb-24"
+        >
+          <motion.div variants={fadeInUp}>
+            <TitleBadge className="mb-8">
+              <span className="text-white">Course Curriculum</span>
+            </TitleBadge>
+          </motion.div>
+          <motion.h2 
+            variants={fadeInUp}
+            className="max-w-[900px] text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] tracking-tight"
+          >
             Mastering Deep Work: A Structured Path to Peak Productivity
-          </h2>
-        </div>
+          </motion.h2>
+        </motion.div>
 
         {/* Main Content Grid */}
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
 
           {/* Left Column: Modules Accordion */}
-          <div className="flex-1 w-full space-y-4">
+          <motion.div 
+            initial="initial"
+            whileInView="whileInView"
+            viewport={{ once: false, margin: "-50px" }}
+            variants={staggerContainer}
+            className="flex-1 w-full space-y-4"
+          >
             {modules.map((module, mIdx) => (
-              <div
+              <motion.div
                 key={mIdx}
+                variants={fadeInUp}
                 className={` rounded-3xl overflow-hidden transition-all duration-500 ${activeModule === mIdx ? 'bg-neutral-900/40 border-neutral-800' : 'bg-transparent'
                   }`}
               >
@@ -133,12 +168,18 @@ const Curriculum = () => {
                 </div>
                 {/* Blue Glow Line below Navbar */}
                 <div className="h-px w-full bg-linear-to-r from-transparent via-primary-500 to-transparent opacity-80 shadow-[0_0_8px_rgba(59,130,246,0.5)]"></div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
 
           {/* Right Column: Benefits Card */}
-          <div className="w-full lg:w-[450px] bg-neutral-600/40 border border-primary-300/50 rounded-[32px]  sticky top-24">
+          <motion.div 
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="w-full lg:w-[450px] bg-neutral-600/40 border border-primary-300/50 rounded-[32px]  sticky top-24"
+          >
             <h3 className="text-white text-2xl md:text-3xl lg:text-4xl font-bold m-5 leading-tight">
               Not only video lessons!
             </h3>
@@ -157,9 +198,11 @@ const Curriculum = () => {
             </div>
 
             <div className="flex justify-center mb-5">
-              <EnrollButton className="w-2/3 py-2 text-lg" />
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <EnrollButton className="w-2/3 py-2 text-lg" />
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
 
         </div>
 

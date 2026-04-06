@@ -53,10 +53,10 @@ const NoWorries = () => {
             </div>
 
             {/* Main Content Area */}
-            <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-end justify-between">
+            <div className="flex flex-col sm:flex-row gap-8 md:gap-12 md:items-end justify-between">
               
               {/* Text Block */}
-              <div className="flex-1 space-y-6 lg:space-y-3 max-w-1/3">
+              <div className="flex-1 space-y-6 lg:space-y-3 md:max-w-1/3">
                 <h6 className="text-neutral-500  font-medium leading-relaxed max-w-[400px]">
                   The ability to concentrate deeply is the ultimate productivity hack
                 </h6>
@@ -66,13 +66,13 @@ const NoWorries = () => {
               </div>
 
               {/* Right Strip: Horizontal on Mobile, Vertical on Tablet/Desktop */}
-              <div className="w-full md:w-auto flex flex-row md:flex-col gap-3 md:gap-4 items-center">
+              <div className="w-full md:w-auto flex flex-row sm:flex-col gap-3 md:gap-4 items-center">
                 {images.map((img, i) => (
                   <div 
                     key={i} 
                     className="relative flex-1 md:flex-none w-full md:w-28 lg:w-36 aspect-square md:aspect-4/5 rounded-xl md:rounded-2xl overflow-hidden border border-neutral-800/50 transition-all duration-500 hover:scale-105"
                   >
-                    <Image src={img} alt="Focus visual" fill sizes="(max-width: 768px) 33vw, 150px" className="object-cover" />
+                    <Image src={img} alt="Focus visual" fill sizes="(max-width: 768px) 33vw, 150px" className="object-cover " />
                   </div>
                 ))}
               </div>

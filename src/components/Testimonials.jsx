@@ -4,12 +4,26 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import TitleBadge from './Shared/TitleBadge';
 import playButtonIcon from '../assets/icons/Play-Button.png';
+import { motion } from 'framer-motion';
 
 const TestimonialCard = ({ testimonial }) => {
   const isVideo = testimonial.type === 'video';
 
+  const fadeInUp = {
+    initial: { opacity: 0, y: 30 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: false },
+    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
+  };
+
   return (
-    <div id='testimonials' className="relative shrink-0 w-full sm:w-1/2 lg:w-1/3 px-3 transition-all duration-700">
+    <motion.div 
+      variants={fadeInUp}
+      initial="initial"
+      whileInView="whileInView"
+      viewport={{ once: false }}
+      className="relative shrink-0 w-full sm:w-1/2 lg:w-1/3 px-3 transition-all duration-700"
+    >
       <div className={`relative h-full min-h-[400px] rounded-3xl overflow-hidden border border-neutral-800/50 group ${!isVideo ? 'bg-neutral-900/40 p-8 flex flex-col justify-between' : ''}`}>
         
         {/* Background Image for Video Testimonials */}
@@ -26,9 +40,13 @@ const TestimonialCard = ({ testimonial }) => {
             
             {/* Play Button Overlay */}
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-16 h-16 rounded-full bg-primary-500/20 backdrop-blur-sm border border-primary-500/30 flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:bg-primary-500/40">
+              <motion.div 
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                className="w-16 h-16 rounded-full bg-primary-500/20 backdrop-blur-sm border border-primary-500/30 flex items-center justify-center transition-all duration-300 group-hover:bg-primary-500/40"
+              >
                 <Image src={playButtonIcon} alt="Play" width={240} height={240} className="opacity-90" />
-              </div>
+              </motion.div>
             </div>
           </>
         )}
@@ -53,7 +71,7 @@ const TestimonialCard = ({ testimonial }) => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -109,7 +127,6 @@ const Testimonials = () => {
   }, []);
 
   const nextCard = () => {
-    // CurrentIndex logic: We can go up to testimonials.length - visibleCount
     setCurrentIndex((prev) => (prev + 1 > testimonials.length - visibleCount ? 0 : prev + 1));
   };
 
@@ -117,27 +134,57 @@ const Testimonials = () => {
     setCurrentIndex((prev) => (prev - 1 < 0 ? testimonials.length - visibleCount : prev - 1));
   };
 
+  const fadeInUp = {
+    initial: { opacity: 0, y: 30 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: false, margin: "-100px" },
+    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
+  };
+
+  const staggerContainer = {
+    initial: {},
+    whileInView: {
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
   return (
     <section id="testimonials" className="relative py-24 lg:py-32 bg-neutral-950 overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6">
         
         {/* Header Area */}
-        <div className="flex flex-col items-center text-center mb-20 lg:mb-32">
-          <TitleBadge className="mb-8">
-            <span className="text-white">Testimonials</span>
-          </TitleBadge>
-          <h2 className="text-3xl md:text-5xl lg:text-7xl font-bold text-white tracking-tight leading-[1.1]">
+        <motion.div 
+          initial="initial"
+          whileInView="whileInView"
+          viewport={{ once: false }}
+          variants={staggerContainer}
+          className="flex flex-col items-center text-center mb-20 lg:mb-32"
+        >
+          <motion.div variants={fadeInUp}>
+            <TitleBadge className="mb-8">
+              <span className="text-white">Testimonials</span>
+            </TitleBadge>
+          </motion.div>
+          <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl lg:text-7xl font-bold text-white tracking-tight leading-[1.1]">
             Real Results from <br /> Real People
-          </h2>
-        </div>
+          </motion.h2>
+        </motion.div>
 
         {/* Navigation & Stats row */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
-          <div className="space-y-2">
+        <motion.div 
+          initial="initial"
+          whileInView="whileInView"
+          viewport={{ once: false }}
+          variants={staggerContainer}
+          className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12"
+        >
+          <motion.div variants={fadeInUp} className="space-y-2">
             <h3 className="text-white text-2xl md:text-3xl font-bold">Join with 5K other students</h3>
-          </div>
+          </motion.div>
           
-          <div className="flex items-center gap-4">
+          <motion.div variants={fadeInUp} className="flex items-center gap-4">
             <button 
               onClick={prevCard}
               className="w-12 h-12 rounded-full border border-neutral-800 flex items-center justify-center text-neutral-400 hover:bg-neutral-800 hover:text-white transition-all shadow-lg"
@@ -156,19 +203,23 @@ const Testimonials = () => {
                 <polyline points="9 18 15 12 9 6"></polyline>
               </svg>
             </button>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         {/* Carousel Container */}
         <div className="relative overflow-hidden -mx-3">
-          <div 
+          <motion.div 
+            initial="initial"
+            whileInView="whileInView"
+            viewport={{ once: false, margin: "-50px" }}
+            variants={staggerContainer}
             className="flex transition-transform duration-700 ease-out"
             style={{ transform: `translateX(-${currentIndex * (100 / visibleCount)}%)` }}
           >
             {testimonials.map((test, i) => (
               <TestimonialCard key={i} testimonial={test} />
             ))}
-          </div>
+          </motion.div>
         </div>
 
       </div>
