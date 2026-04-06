@@ -118,7 +118,7 @@ const Banner = () => {
         {/* Actions */}
         <motion.div 
           variants={fadeInUp}
-          className="flex flex-col sm:flex-row gap-4 mb-20 items-center"
+          className="flex gap-4 mb-20 items-center"
         >
           <EnrollButton className="w-full sm:w-auto px-8 py-4" />
           <Link href="#curriculum" className="w-full sm:w-auto px-8 py-4 bg-neutral-600/50 backdrop-blur-sm border border-neutral-800 text-white font-medium rounded-lg hover:bg-neutral-800 transition-all">
