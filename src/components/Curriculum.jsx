@@ -150,7 +150,7 @@ const Curriculum = () => {
                       >
                         <div className="flex items-center gap-4">
                           <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-all ${lesson.preview ? 'bg-primary-500/20 text-primary-500' : 'bg-neutral-800 text-neutral-500 group-hover:bg-neutral-700'}`}>
-                            <Image src={playButtonIcon} alt="Play" width={20} height={20} className={lesson.preview ? 'opacity-100' : 'opacity-40'} />
+                            <Image src={playButtonIcon} alt="Play" width={20} height={20} className={`w-full ${lesson.preview ? 'opacity-100' : 'opacity-40'}`} />
                           </div>
                           <div className="flex items-center gap-3">
                             <span className="text-neutral-300 font-medium md:text-lg">{lesson.title}</span>
@@ -180,14 +180,14 @@ const Curriculum = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="w-full md:w-[450px] mx-auto bg-neutral-600/40 border border-primary-300/50 rounded-[32px]  sticky top-24"
           >
-            <h3 className="text-white text-2xl md:text-3xl lg:text-4xl font-bold m-5 leading-tight">
+            <h3 className="text-white text-2xl md:text-3xl lg:text-4xl font-bold ml-8 mt-10 leading-tight mb-16">
               Not only video lessons!
             </h3>
 
             <div className=" ">
               {benefits.map((benefit, i) => (
                 <div key={i} className="flex items-center  group">
-                  <div className="relative w-12 h-12">
+                  <div className="relative w-22 h-22">
                     <Image src={signIcon} alt="Check" fill sizes="48px" className="object-contain opacity-80 group-hover:opacity-100" />
                   </div>
                   <p className="text-neutral-400 text-sm">

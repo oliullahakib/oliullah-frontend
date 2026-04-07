@@ -115,7 +115,7 @@ const Footer = () => {
           whileInView="whileInView"
           viewport={{ once: false }}
           variants={staggerContainer}
-          className="pt-12 border-t border-neutral-900 flex flex-col md:flex-row items-center justify-between gap-8"
+          className="pt-12 border-t border-neutral-900 flex flex-col-reverse md:flex-row items-center justify-between gap-8"
         >
 
           <motion.p variants={fadeInUp} className="text-white font-medium text-sm md:text-base">
