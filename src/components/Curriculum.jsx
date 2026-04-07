@@ -86,7 +86,7 @@ const Curriculum = () => {
           whileInView="whileInView"
           viewport={{ once: false }}
           variants={staggerContainer}
-          className="flex flex-col items-center text-center mb-20 lg:mb-24"
+          className="flex flex-col items-center text-center my-32"
         >
           <motion.div variants={fadeInUp}>
             <TitleBadge className="mb-8">

@@ -152,7 +152,7 @@ const Testimonials = () => {
 
   return (
     <section id="testimonials" className="relative py-24 lg:py-32 bg-neutral-950 overflow-hidden">
-      <div className="max-w-[1400px] mx-auto px-6">
+      <div className="max-w-[1400px] mx-auto px-6 my-32">
         
         {/* Header Area */}
         <motion.div 
@@ -167,7 +167,7 @@ const Testimonials = () => {
               <span className="text-white">Testimonials</span>
             </TitleBadge>
           </motion.div>
-          <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl lg:text-7xl font-bold text-white tracking-tight leading-[1.1]">
+          <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl lg:text-7xl font-bold text-white tracking-tight leading-[1.1] pb-40">
             Real Results from <br /> Real People
           </motion.h2>
         </motion.div>
@@ -178,7 +178,7 @@ const Testimonials = () => {
           whileInView="whileInView"
           viewport={{ once: false }}
           variants={staggerContainer}
-          className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12"
+          className="flex flex-row md:items-end justify-between gap-8 mb-12"
         >
           <motion.div variants={fadeInUp} className="space-y-2">
             <h3 className="text-white text-2xl md:text-3xl font-bold">Join with 5K other students</h3>

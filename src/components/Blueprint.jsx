@@ -129,7 +129,7 @@ const Blueprint = () => {
                     height={80}
                     className="w-30 h-30 object-contain relative z-10 "
                   />
-                  <h6 className="text-neutral-300 font-medium max-w-[150px] ">
+                  <h6 className="text-neutral-300 font-medium max-w-[245px] ">
                     {step.text}
                   </h6>
                 </motion.div>

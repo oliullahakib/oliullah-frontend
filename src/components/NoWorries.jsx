@@ -31,7 +31,7 @@ const NoWorries = () => {
   };
 
   return (
-    <section className="relative py-20 lg:py-32 bg-neutral-950 overflow-hidden">
+    <section className="relative py-32 bg-neutral-950 overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6">
         
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-stretch">

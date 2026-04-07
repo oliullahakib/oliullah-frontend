@@ -38,7 +38,7 @@ const Motivation = () => {
         initial="initial"
         whileInView="whileInView"
         viewport={{ once: false, margin: "-100px" }}
-        className="relative z-10 max-w-[1400px] mx-auto px-6 flex flex-col items-center text-center"
+        className="relative z-10 max-w-[1400px] mx-auto px-6 flex flex-col items-center text-center mt-32"
       >
 
         {/* Badge: "Are Distractions Holding You Back?" */}

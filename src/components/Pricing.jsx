@@ -41,10 +41,11 @@ const Pricing = () => {
                         viewport={{ once: false }}
                         variants={staggerContainer}
                     >
-                        <TitleBadge className={'w-40 top-5 text-white'}>Introduction</TitleBadge>
+                        <TitleBadge className={'w-40 top-5 text-white ml-5'}>Introduction</TitleBadge>
                         <h1 className="text-white text-2xl md:text-3xl lg:text-4xl font-bold m-5 leading-tight">
                             The Deep Work  Blueprint
                         </h1>
+                        <p className='text-neutral-100 text-sm mb-16 ml-5'>What extra you will get if you enroll now</p>
                     </motion.div>
 
                     <motion.div
@@ -75,7 +76,7 @@ const Pricing = () => {
                             initial="initial"
                             whileInView="whileInView"
                             viewport={{ once: false }}
-                            className="text-white text-2xl md:text-3xl lg:text-4xl font-bold m-5 leading-tight"
+                            className="text-white text-4xl font-bold m-5 leading-tight"
                         >
                             $349
                             <span className="text-neutral-400 text-xl relative ml-2">$500
