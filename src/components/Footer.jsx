@@ -47,12 +47,12 @@ const Footer = () => {
             whileInView="whileInView"
             viewport={{ once: false }}
             variants={staggerContainer}
-            className="max-w-[500px] text-center lg:text-left"
+            className="max-w-[500px] flex flex-col items-center lg:text-left"
           >
-            <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
-              The Deep Work <br /> Blueprint
+            <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl lg:text-6xl font-bold text-white text-center mb-6 tracking-tight">
+              The Deep <br /> Work Blueprint
             </motion.h2>
-            <motion.p variants={fadeInUp} className="text-neutral-400 text-lg md:text-xl font-medium">
+            <motion.p variants={fadeInUp} className="w-56 text-center lg:w-full text-neutral-400 text-lg md:text-xl font-medium">
               Master Focus & Get More Done in Less Time
             </motion.p>
           </motion.div>
