@@ -119,7 +119,13 @@ const Testimonials = () => {
 
   useEffect(() => {
     const updateVisibleCount = () => {
-      setVisibleCount(window.innerWidth < 1024 ? 2 : 3);
+      if (window.innerWidth < 640) {
+        setVisibleCount(1);
+      } else if (window.innerWidth < 1024) {
+        setVisibleCount(2);
+      } else {
+        setVisibleCount(3);
+      }
     };
     updateVisibleCount();
     window.addEventListener('resize', updateVisibleCount);
@@ -167,7 +173,7 @@ const Testimonials = () => {
               <span className="text-white">Testimonials</span>
             </TitleBadge>
           </motion.div>
-          <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl lg:text-7xl font-bold text-white tracking-tight leading-[1.1] pb-40">
+          <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl lg:text-7xl font-bold text-white tracking-tight leading-[1.1] pb-16 md:pb-40">
             Real Results from <br /> Real People
           </motion.h2>
         </motion.div>
