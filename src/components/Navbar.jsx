@@ -43,8 +43,8 @@ const Navbar = () => {
           <Image
             src={logo}
             alt="PPA Logo"
-            width={32}
-            height={32}
+            width={232}
+            height={232}
             className="w-auto h-8"
             style={{ width: 'auto' }}
           />
@@ -72,7 +72,7 @@ const Navbar = () => {
               alt="Toggle"
               width={200}
               height={120}
-              className="w-12 h-auto"
+              className="w-16 h-auto"
               style={{ height: 'auto' }}
             />
           </button>

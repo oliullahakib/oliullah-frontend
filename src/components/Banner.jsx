@@ -33,7 +33,7 @@ const Banner = () => {
   };
 
   return (
-    <section id='home' className="relative min-h-screen pt-32 pb-20 overflow-hidden bg-neutral-950">
+    <section id='home' className="relative min-h-screen pt-40 pb-20 overflow-hidden bg-neutral-950">
       {/* Background Texture Overlay (Global) */}
       <motion.div
         initial={{ opacity: 0 }}
